@@ -2,7 +2,6 @@
     display: flex;
     gap: 30px;
 }
-
 .client-item {
     border: 1px solid #AFB1B8;
     border-radius: 4px;
@@ -11,7 +10,6 @@
     height: 92px;
     display: flex;
 }
-
 .client-link {
     width: 100%;
     height: 100%;
@@ -22,22 +20,21 @@
     transition-property: border;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.client-link:focus,
-.client-link:hover {
-    border: 1px solid var(--accent-color);
+    &:focus,
+    &:hover {
+        border: 1px solid var(--accent-color);
+    }
 }
-
-.client-link:focus .client-icon,
-.client-link:hover .client-icon {
-    fill: var(--accent-color);
-}
-
 .client-icon {
     fill: #AFB1B8;
 
     transition-property: fill;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    .client-link:focus &,
+    .client-link:hover & {
+        fill: var(--accent-color);
+    }
 }

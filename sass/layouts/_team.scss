@@ -22,36 +22,32 @@
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-}
+    &:hover,
+    &:focus {
+        background-color: var(--accent-color);
+    }
 
-.team-soc-link:hover,
-.team-soc-link:focus {
-    background-color: var(--accent-color);
 }
-
-.team-soc-link:hover .team-soc-icon,
-.team-soc-link:focus .team-soc-icon {
-    fill: var(--main-white-color);
-}
-
 .team-soc-icon {
     fill: #AFB1B8;
 
     transition-property: fill;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
 
+    .team-soc-link:hover &,
+    .team-soc-link:focus & {
+        fill: var(--main-white-color);
+    }
+}
 .team-text {
     padding: 30px 15px;
 }
-
 .team-item {
     background-color: var(--primary-background-color);
     width:270px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
-
 .team-list-title {
     font-weight: 500;
     font-size: 16px;
@@ -60,7 +56,6 @@
     text-align: center;
     margin-bottom: 10px;
 }
-
 .team-list-text {
     text-align: center;
     font-weight: 400;

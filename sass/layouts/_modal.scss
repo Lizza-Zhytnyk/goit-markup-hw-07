@@ -10,6 +10,11 @@
 
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+    .is-hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
 }
 
 .modal {
@@ -25,6 +30,10 @@
     background-color: var(--main-white-color);
 
     padding: 40px;
+
+    .backdrop.is-hidden & {
+            transform: translate(-50%, -50%) scale(0.8);
+        }
 }
 
 .btn-modal {
@@ -51,14 +60,13 @@
     cursor: pointer;
 
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        fill: var(--accent-color);
+
+    }
 }
-
-.modal-close-btn:hover,
-.modal-close-btn:focus {
-    fill: var(--accent-color);
-
-}
-
 .modal-form {
     display: flex;
     flex-direction: column;
@@ -69,16 +77,6 @@
     padding: 10px 52px;
     margin: 0 auto;
 }
-
-.backdrop.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.backdrop.is-hidden.modal {
-    transform: translate(-50%, -50%) scale(0.8);
-}
-
 .modal-input {
     width: 448px;
     padding-top: 12px;
@@ -88,6 +86,10 @@
     padding-left: 42px;
 
     transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus {
+        outline-color: var(--accent-color);
+    }
 }
 
 .modal-comment {
@@ -98,16 +100,22 @@
     min-height: 138px;
 
     transition: outline-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &::placeholder {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.01em;
+
+        color: rgba(117, 117, 117, 0.5);
+    }
+
+    &:focus {
+        outline-color: var(--accent-color);
+    }
 }
 
-.modal-comment::placeholder {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.01em;
 
-    color: rgba(117, 117, 117, 0.5);
-}
 
 .modal-icon {
     position: absolute;
@@ -116,21 +124,16 @@
     left: 12px;
 
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .modal-input:focus+ & {
+        fill: var(--accent-color);
+    }
 }
 
 .input-form {
     position: relative;
 }
 
-.modal-input:focus,
-.modal-comment:focus {
-    outline-color: var(--accent-color);
-
-}
-
-.modal-input:focus+.modal-icon {
-    fill: var(--accent-color);
-}
 
 .check-text .check-span {
     width: 16px;
@@ -149,6 +152,10 @@
     fill: transparent;
 
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .input-check:checked+.check-text & {
+        fill: var(--main-white-color);
+    }
 }
 
 .input-check:checked+.check-text .check-span {
@@ -160,9 +167,7 @@
     border-color: var(--accent-color);
 }
 
-.input-check:checked+.check-text .check-icon {
-    fill: var(--main-white-color);
-}
+
 
 .check-text {
     display: flex;
@@ -229,8 +234,9 @@
     cursor: pointer;
 
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.btn-modal-form:hover,
-.btn-modal-form:focus {
-    background-color: var(--hover-btn-color);
+
+    &:hover,
+    &:focus {
+        background-color: var(--hover-btn-color);
+    }
 }
