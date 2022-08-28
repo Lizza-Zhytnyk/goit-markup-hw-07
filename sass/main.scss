@@ -2,10 +2,17 @@
 @import './base/reset';
 @import './base/common';
 @import './utils/hidden';
+@import './utils/placeholders';
 
 @import './components/container';
 @import './components/logo';
 @import './components/section';
+@import './components/send-btn';
+@import './components/title';
+@import './components/div-title';
+@import './components/card-after-title';
+@import './components/footer-address';
+
 
 @import './layouts/header';
 @import './layouts/hero';
